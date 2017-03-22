@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Scroll</title>
+    <style>
+        p { height: 100px; background-color: yellow; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+
+        function createText(){
+            for(var i = 0; i < 5; i++ ){
+                console.log('ñeee');
+                var p = document.createElement("p");
+                document.getElementById('main').appendChild(p);
+            }
+        }
+
+        document.onload = function(){
+            console.log('document load');
+        };
+        window.onload = function(){
+            createText();
+            console.log('window load');
+            console.log('window height --> ', window.innerHeight);
+            console.log('document height --> ', document.body.clientHeight);
+        };
+        window.onscroll = function(){
+            console.log('window scroll');    
+        };
+    </script>
+</body>
+</html>
